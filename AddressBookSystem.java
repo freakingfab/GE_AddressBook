@@ -109,14 +109,9 @@ class AddressBook{
 //    @desc: function for deleting contacts
 //    @params: Contact object
 //    @return: void
-    public void deleteContact(Contact C){
-        if(contacts.contains(C)){
-            contacts.remove(C);
+    public void deleteContact(int index){
+            contacts.remove(index);
             System.out.println("Contact Deleted");
-        }
-        else{
-            System.out.println("Contact Not Found");
-        }
     }
 
 
@@ -144,8 +139,8 @@ public class AddressBookSystem {
     private static final int displayContact = 2;
 
     private static final int editContact = 3;
-
-    private static int exit =4;
+    private static final int deleteContact=4;
+    private static final int exit =5;
 
     public static void main(String[] args){
         System.out.println("Welcome to Address Book System");
@@ -157,7 +152,8 @@ public class AddressBookSystem {
             System.out.println("Add Contact -> 1");
             System.out.println("Display Contacts -> 2");
             System.out.println("Edit Contact ->3");
-            System.out.println("Exit -> 4");
+            System.out.println("Delete Contact -> 4");
+            System.out.println("Exit-> 5");
             System.out.print("Please Enter the choice: ");
             choice = input.nextInt();
             if(choice==exit){
@@ -215,6 +211,19 @@ public class AddressBookSystem {
                     }
                     else{
                         System.out.print("Contact Not Found");
+                    }
+                    break;
+                case deleteContact:
+                    System.out.print("Enter First Name: ");
+                    firstName = input.next();
+                    System.out.print("Enter Last Name: ");
+                    lastName = input.next();
+                    int index=getContact(contactBook.getContacts(), firstName, lastName);
+                    if(index!=-1){
+                        contactBook.deleteContact(index);
+                    }
+                    else{
+                        System.out.println("Contact Not Found");
                     }
                     break;
                 default:
