@@ -143,7 +143,9 @@ public class AddressBookSystem {
     private static final int addContact = 1;
     private static final int displayContact = 2;
 
-    private static int exit =3;
+    private static final int editContact = 3;
+
+    private static int exit =4;
 
     public static void main(String[] args){
         System.out.println("Welcome to Address Book System");
@@ -154,7 +156,8 @@ public class AddressBookSystem {
             System.out.println("======================");
             System.out.println("Add Contact -> 1");
             System.out.println("Display Contacts -> 2");
-            System.out.println("Exit -> 3");
+            System.out.println("Edit Contact ->3");
+            System.out.println("Exit -> 4");
             System.out.print("Please Enter the choice: ");
             choice = input.nextInt();
             if(choice==exit){
@@ -185,7 +188,35 @@ public class AddressBookSystem {
                 case displayContact:
                     displayBook(contactBook.getContacts());
                     break;
-
+                case editContact:
+                    System.out.print("Enter First Name: ");
+                    firstName = input.next();
+                    System.out.print("Enter Last Name: ");
+                    lastName = input.next();
+                    int cuC=getContact(contactBook.getContacts(), firstName, lastName);
+                    if(cuC!=-1){
+                        System.out.print("Enter First Name: ");
+                        firstName = input.next();
+                        System.out.print("Enter Last Name: ");
+                        lastName = input.next();
+                        System.out.print("Enter Address: ");
+                        address = input.next();
+                        System.out.print("Enter State: ");
+                        state = input.next();
+                        System.out.print("Enter City: ");
+                        city = input.next();
+                        System.out.print("Enter email: ");
+                        email = input.next();
+                        System.out.print("Enter ZipCode: ");
+                        zipCode = input.nextInt();
+                        System.out.print("Enter Phone Number: ");
+                        phoneNo = input.nextLong();
+                        contactBook.editContact(cuC, firstName,lastName,address,city,state,email,zipCode,phoneNo);
+                    }
+                    else{
+                        System.out.print("Contact Not Found");
+                    }
+                    break;
                 default:
                     System.out.println("Invalid input");
             }
@@ -210,5 +241,18 @@ public class AddressBookSystem {
             System.out.println("ZipCode: " + currContact.getZipCode());
             System.out.println("PhoneNo: " + currContact.getPhoneNo());
         }
+    }
+
+//    @desc: function for getting index of searched contact
+//    @params: List of contacts, firstname, lastname
+//    @return: index of contact
+    private static int getContact(List<Contact> contacts, String firstName, String lastName){
+        for (int i=0;i<contacts.size();i++) {
+            Contact contact=contacts.get(i);
+            if (contact.getFirstName().equalsIgnoreCase(firstName) && contact.getLastName().equalsIgnoreCase(lastName)) {
+                return i;
+            }
+        }
+        return -1;
     }
 }
