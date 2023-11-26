@@ -9,6 +9,8 @@ class Contact{
     private int zipCode;
     private long phoneNo;
 
+//    @desc: constructor for Contact class
+//    @params: details for contact
     public Contact(String firstName, String lastName, String address, String city, String state, String email, int zipCode, long phoneNo){
         this.firstName=firstName;
         this.lastName=lastName;
@@ -20,6 +22,9 @@ class Contact{
         this.phoneNo=phoneNo;
     }
 
+//    @desc: getter and setters for all variable
+//    @params: getter->none, setter->update variable
+//    @return: getter->same as type of variable, setter->void
     public String getFirstName(){
         return this.firstName;
     }
@@ -77,21 +82,33 @@ class Contact{
     }
 }
 
+//@name: AddressBook
+//@desc: list of contacts is stored
 class AddressBook{
     private List<Contact> contacts;
 
+//    @desc: constructor for class
     public AddressBook(){
         contacts = new ArrayList<>();
     }
 
+//    @desc: function for adding contacts
+//    @params: Contact object
+//    @return: void
     public void addContact(Contact C){
         contacts.add(C);
     }
 
+//    @desc: function for getting contacts
+//    @params: none
+//    @return: List<Contact>
     public List<Contact> getContacts(){
         return contacts;
     }
 
+//    @desc: function for deleting contacts
+//    @params: Contact object
+//    @return: void
     public void deleteContact(Contact C){
         if(contacts.contains(C)){
             contacts.remove(C);
@@ -102,6 +119,10 @@ class AddressBook{
         }
     }
 
+
+//    @desc: function for editing contacts
+//    @params: details for contact
+//    @return: void
     public void editContact(Integer index, String firstName, String lastName, String address, String city, String state, String email, int zipCode, long phoneNo){
             Contact C = contacts.get(index);
             C.setFirstName(firstName);
@@ -116,8 +137,78 @@ class AddressBook{
             System.out.print("Contact Edited");
     }
 }
+
+
 public class AddressBookSystem {
+    private static final int addContact = 1;
+    private static final int displayContact = 2;
+
+    private static int exit =3;
+
     public static void main(String[] args){
-    
+        System.out.println("Welcome to Address Book System");
+        Scanner input = new Scanner(System.in);
+        int choice=-1;
+        AddressBook contactBook = new AddressBook();
+        while(true){
+            System.out.println("======================");
+            System.out.println("Add Contact -> 1");
+            System.out.println("Display Contacts -> 2");
+            System.out.println("Exit -> 3");
+            System.out.print("Please Enter the choice: ");
+            choice = input.nextInt();
+            if(choice==exit){
+                break;
+            }
+            switch (choice){
+                case addContact:
+                    System.out.print("Enter First Name: ");
+                    String firstName = input.next();
+                    System.out.print("Enter Last Name: ");
+                    String lastName = input.next();
+                    System.out.print("Enter Address: ");
+                    String address = input.next();
+                    System.out.print("Enter State: ");
+                    String state = input.next();
+                    System.out.print("Enter City: ");
+                    String city = input.next();
+                    System.out.print("Enter email: ");
+                    String email = input.next();
+                    System.out.print("Enter ZipCode: ");
+                    int zipCode = input.nextInt();
+                    System.out.print("Enter Phone Number: ");
+                    long phoneNo = input.nextLong();
+                    Contact C = new Contact(firstName,lastName,address,city,state,email,zipCode,phoneNo);
+                    contactBook.addContact(C);
+                    break;
+
+                case displayContact:
+                    displayBook(contactBook.getContacts());
+                    break;
+
+                default:
+                    System.out.println("Invalid input");
+            }
+        }
+    }
+
+
+//    @desc: function for displaying contacts
+//    @params: List of Contact object
+//    @return: void
+    private static void displayBook(List<Contact> contacts){
+        System.out.println("Address Book");
+        for (int i = 0; i < contacts.size(); i++) {
+            Contact currContact = contacts.get(i);
+            System.out.println("======================");
+            System.out.println("First Name: " + currContact.getFirstName());
+            System.out.println("Last Name: " + currContact.getLastName());
+            System.out.println("Address: " + currContact.getAddress());
+            System.out.println("State: " + currContact.getState());
+            System.out.println("City: " + currContact.getCity());
+            System.out.println("Email: " + currContact.getEmail());
+            System.out.println("ZipCode: " + currContact.getZipCode());
+            System.out.println("PhoneNo: " + currContact.getPhoneNo());
+        }
     }
 }
