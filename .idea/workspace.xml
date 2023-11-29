@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3f33b8e6-0c6f-473c-862b-f9b95a8ba688" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AddressBookSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/AddressBookSystem.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +37,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/Daksh/OneDrive/Desktop/New folder/GE/AddressBookSystem",
+    "last_opened_file_path": "C:/Users/Daksh/OneDrive/Desktop/New folder/GE",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -69,7 +68,8 @@
       <option name="presentableId" value="Default" />
       <updated>1701014049882</updated>
       <workItem from="1701014056551" duration="6856000" />
-      <workItem from="1701094936530" duration="380000" />
+      <workItem from="1701094936530" duration="802000" />
+      <workItem from="1701138632381" duration="717000" />
     </task>
     <servers />
   </component>
