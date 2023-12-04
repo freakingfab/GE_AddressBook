@@ -4,6 +4,7 @@ package com.bridgelabz.addressbook;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.Map;
 
 //@name: AddressBook
 //@desc: list of contacts is stored
@@ -71,27 +72,25 @@ public class AddressBook{
     }
 
     /*
-        @desc: give list of people in given state
-        @params: state
-        @return: List<Contact>
+        @desc: give dictionary of people acc. to city
+        @params: city
+        @return: Map<String, List<Contact>>
      */
-    public List<Contact> searchPersonInState(String state) {
+    public Map<String, List<Contact>> createCityDictionary() {
         return contacts.stream()
-                .flatMap(contacts -> this.getContacts().stream())
-                .filter(contact -> contact.getState().equalsIgnoreCase(state))
-                .collect(Collectors.toList());
+                .flatMap(addressBook -> this.getContacts().stream())
+                .collect(Collectors.groupingBy(Contact::getCity));
     }
 
     /*
-       @desc: give list of people in given city
-       @params: city
-       @return: List<Contact>
+       @desc: give dictionary of people acc. to state
+        @params: state
+        @return: Map<String, List<Contact>>
     */
-    public List<Contact> searchPersonInCity(String city) {
+    public Map<String, List<Contact>> createStateDictionary() {
         return contacts.stream()
                 .flatMap(addressBook -> this.getContacts().stream())
-                .filter(contact -> contact.getCity().equalsIgnoreCase(city))
-                .collect(Collectors.toList());
+                .collect(Collectors.groupingBy(Contact::getState));
     }
 }
 

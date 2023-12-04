@@ -2,6 +2,7 @@ package com.bridgelabz.addressbook;
 
 import java.util.Scanner;
 import java.util.List;
+import java.util.Map;
 
 public class Main {
     private static final int addContact = 1;
@@ -27,8 +28,8 @@ public class Main {
                 System.out.println("Display Contacts -> 2");
                 System.out.println("Edit Contact ->3");
                 System.out.println("Delete Contact -> 4");
-                System.out.println("Search for people in state -> 5");
-                System.out.println("Search for people in city -> 6");
+                System.out.println("People in state -> 5");
+                System.out.println("People in city -> 6");
                 System.out.println("Exit-> 7");
                 System.out.print("Please Enter the choice: ");
                 choice = input.nextInt();
@@ -101,16 +102,14 @@ public class Main {
                         }
                         break;
                     case searchedState:
-                        System.out.print("Enter State for which people have to be searched: ");
-                        String stateForSearch = input.next();
-                        List<Contact> personsInState = contactBook.searchPersonInState(stateForSearch);
-                        addressBooks.displayBook(personsInState);
+                        System.out.println("People acc. to state:");
+                        Map<String, List<Contact>> stateDictionary = contactBook.createStateDictionary();
+                        stateDictionary.forEach((stateSearched, persons) -> System.out.println("Persons in " + stateSearched + ": " + persons));
                         break;
                     case searchedCity:
-                        System.out.print("Enter City for which people have to be searched: ");
-                        String cityForSearch = input.next();
-                        List<Contact> personsInCity = contactBook.searchPersonInCity(cityForSearch);
-                        addressBooks.displayBook(personsInCity);
+                        System.out.println("People acc. to city:");
+                        Map<String, List<Contact>> cityDictionary = contactBook.createCityDictionary();
+                        cityDictionary.forEach((citySearched, persons) -> System.out.println("Persons in " + citySearched + ": " + persons));
                         break;
                     default:
                         System.out.println("Invalid input");
