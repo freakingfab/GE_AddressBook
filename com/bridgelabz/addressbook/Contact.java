@@ -1,5 +1,7 @@
 package com.bridgelabz.addressbook;
 
+import java.util.Objects;
+
 //@name: com.bridgelabz.addressbook.Contact
 // @desc: class for creating contact objects
 public class Contact{
@@ -77,6 +79,20 @@ public class Contact{
     }
     public void setPhoneNo(Long phoneNo){
         this.phoneNo=phoneNo;
+    }
+
+    /*
+        @desc: checking for duplicates
+        @params: Object
+        @return: boolean
+     */
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Contact contact = (Contact) obj;
+        return Objects.equals(getFirstName(), contact.getFirstName()) &&
+                Objects.equals(getLastName(), contact.getLastName());
     }
 }
 

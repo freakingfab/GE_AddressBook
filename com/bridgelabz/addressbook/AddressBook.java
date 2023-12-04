@@ -3,8 +3,9 @@ package com.bridgelabz.addressbook;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
-//@name: com.bridgelabz.addressbook.AddressBook
+//@name: AddressBook
 //@desc: list of contacts is stored
 public class AddressBook{
     private List<Contact> contacts;
@@ -20,12 +21,17 @@ public class AddressBook{
 //    @params: com.bridgelabz.addressbook.Contact object
 //    @return: void
     public void addContact(Contact C){
-        contacts.add(C);
+        if (!isDuplicate(C)) {
+            contacts.add(C);
+            System.out.println("Contact Added");
+        } else {
+            System.out.println("Duplicate Entry! Contact not added.");
+        }
     }
 
     //    @desc: function for getting contacts
 //    @params: none
-//    @return: List<com.bridgelabz.addressbook.Contact>
+//    @return: List<Contact>
     public List<Contact> getContacts(){
         return contacts;
     }
@@ -54,6 +60,14 @@ public class AddressBook{
         C.setZipCode(zipCode);
         contacts.set(index,C);
         System.out.print("com.bridgelabz.addressbook.Contact Edited");
+    }
+    /*
+     @desc: check for duplicate values
+     @params: Contact object
+     @return: boolean
+     */
+    private boolean isDuplicate(Contact contact) {
+        return contacts.stream().anyMatch(c -> c.equals(contact));
     }
 }
 

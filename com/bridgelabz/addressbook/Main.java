@@ -16,8 +16,6 @@ public class Main {
         AddressBookSystem addressBooks = new AddressBookSystem();
         AddressBook contactBook1 = new AddressBook("Book1");
         addressBooks.add(contactBook1);
-        AddressBook contactBook2 = new AddressBook("Book2");
-        addressBooks.add(contactBook2);
         for (AddressBook contactBook: addressBooks.getAddressBooks()) {
             int choice = -1;
             while (true) {
