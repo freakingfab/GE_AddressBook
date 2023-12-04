@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f33b8e6-0c6f-473c-862b-f9b95a8ba688" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/com/bridgelabz/addressbook/AddressBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/bridgelabz/addressbook/AddressBook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/bridgelabz/addressbook/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/bridgelabz/addressbook/Contact.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/bridgelabz/addressbook/AddressBookSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/bridgelabz/addressbook/AddressBookSystem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/com/bridgelabz/addressbook/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/bridgelabz/addressbook/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,7 +39,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "UC7__check__duplicates",
     "last_opened_file_path": "C:/Users/Daksh/OneDrive/Desktop/New folder/GE/AddressBookSystem",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -88,7 +87,7 @@
       <workItem from="1701014056551" duration="6856000" />
       <workItem from="1701094936530" duration="802000" />
       <workItem from="1701138632381" duration="717000" />
-      <workItem from="1701705342462" duration="1153000" />
+      <workItem from="1701705342462" duration="2596000" />
     </task>
     <servers />
   </component>

@@ -3,7 +3,7 @@ package com.bridgelabz.addressbook;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
+import java.util.stream.Collectors;
 
 //@name: AddressBook
 //@desc: list of contacts is stored
@@ -68,6 +68,30 @@ public class AddressBook{
      */
     private boolean isDuplicate(Contact contact) {
         return contacts.stream().anyMatch(c -> c.equals(contact));
+    }
+
+    /*
+        @desc: give list of people in given state
+        @params: state
+        @return: List<Contact>
+     */
+    public List<Contact> searchPersonInState(String state) {
+        return contacts.stream()
+                .flatMap(contacts -> this.getContacts().stream())
+                .filter(contact -> contact.getState().equalsIgnoreCase(state))
+                .collect(Collectors.toList());
+    }
+
+    /*
+       @desc: give list of people in given city
+       @params: city
+       @return: List<Contact>
+    */
+    public List<Contact> searchPersonInCity(String city) {
+        return contacts.stream()
+                .flatMap(addressBook -> this.getContacts().stream())
+                .filter(contact -> contact.getCity().equalsIgnoreCase(city))
+                .collect(Collectors.toList());
     }
 }
 

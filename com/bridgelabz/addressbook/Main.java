@@ -1,6 +1,7 @@
 package com.bridgelabz.addressbook;
 
 import java.util.Scanner;
+import java.util.List;
 
 public class Main {
     private static final int addContact = 1;
@@ -8,7 +9,9 @@ public class Main {
 
     private static final int editContact = 3;
     private static final int deleteContact=4;
-    private static final int exit =5;
+    private static final int searchedState = 5;
+    private static final int searchedCity = 6;
+    private static final int exit =7;
 
     public static void main(String[] args) {
         System.out.println("Welcome to Address Book System");
@@ -24,7 +27,9 @@ public class Main {
                 System.out.println("Display Contacts -> 2");
                 System.out.println("Edit Contact ->3");
                 System.out.println("Delete Contact -> 4");
-                System.out.println("Exit-> 5");
+                System.out.println("Search for people in state -> 5");
+                System.out.println("Search for people in city -> 6");
+                System.out.println("Exit-> 7");
                 System.out.print("Please Enter the choice: ");
                 choice = input.nextInt();
                 if (choice == exit) {
@@ -94,6 +99,18 @@ public class Main {
                         } else {
                             System.out.println("Contact Not Found");
                         }
+                        break;
+                    case searchedState:
+                        System.out.print("Enter State for which people have to be searched: ");
+                        String stateForSearch = input.next();
+                        List<Contact> personsInState = contactBook.searchPersonInState(stateForSearch);
+                        addressBooks.displayBook(personsInState);
+                        break;
+                    case searchedCity:
+                        System.out.print("Enter City for which people have to be searched: ");
+                        String cityForSearch = input.next();
+                        List<Contact> personsInCity = contactBook.searchPersonInCity(cityForSearch);
+                        addressBooks.displayBook(personsInCity);
                         break;
                     default:
                         System.out.println("Invalid input");
