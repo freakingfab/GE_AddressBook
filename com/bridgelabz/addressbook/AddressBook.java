@@ -73,7 +73,7 @@ public class AddressBook{
 
     /*
         @desc: give dictionary of people acc. to city
-        @params: city
+        @params: none
         @return: Map<String, List<Contact>>
      */
     public Map<String, List<Contact>> createCityDictionary() {
@@ -84,13 +84,35 @@ public class AddressBook{
 
     /*
        @desc: give dictionary of people acc. to state
-        @params: state
+        @params: none
         @return: Map<String, List<Contact>>
     */
     public Map<String, List<Contact>> createStateDictionary() {
         return contacts.stream()
                 .flatMap(addressBook -> this.getContacts().stream())
                 .collect(Collectors.groupingBy(Contact::getState));
+    }
+
+    /*
+        @desc: map for count acc. to city
+        @params: none
+        @return: Map<String, Long>
+     */
+    public Map<String, Long> countPersonsByCity() {
+        return contacts.stream()
+                .flatMap(addressBook -> this.getContacts().stream())
+                .collect(Collectors.groupingBy(Contact::getCity, Collectors.counting()));
+    }
+
+    /*
+        @desc: map for count acc. to state
+        @params: none
+        @return: Map<String, Long>
+     */
+    public Map<String, Long> countPersonsByState() {
+        return contacts.stream()
+                .flatMap(addressBook -> this.getContacts().stream())
+                .collect(Collectors.groupingBy(Contact::getState, Collectors.counting()));
     }
 }
 

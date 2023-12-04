@@ -12,7 +12,9 @@ public class Main {
     private static final int deleteContact=4;
     private static final int searchedState = 5;
     private static final int searchedCity = 6;
-    private static final int exit =7;
+    private static final int countState = 7;
+    private static final int countCity = 8;
+    private static final int exit =9;
 
     public static void main(String[] args) {
         System.out.println("Welcome to Address Book System");
@@ -30,7 +32,9 @@ public class Main {
                 System.out.println("Delete Contact -> 4");
                 System.out.println("People in state -> 5");
                 System.out.println("People in city -> 6");
-                System.out.println("Exit-> 7");
+                System.out.println("Count in state -> 7");
+                System.out.println("Count in city -> 8");
+                System.out.println("Exit-> 9");
                 System.out.print("Please Enter the choice: ");
                 choice = input.nextInt();
                 if (choice == exit) {
@@ -110,6 +114,16 @@ public class Main {
                         System.out.println("People acc. to city:");
                         Map<String, List<Contact>> cityDictionary = contactBook.createCityDictionary();
                         cityDictionary.forEach((citySearched, persons) -> System.out.println("Persons in " + citySearched + ": " + persons));
+                        break;
+                    case countState:
+                        System.out.println("Count acc. to state:");
+                        Map<String, Long> stateCounts = contactBook.countPersonsByState();
+                        stateCounts.forEach((stateCount, count) -> System.out.println("Number of persons in " + stateCount + ": " + count));
+                        break;
+                    case countCity:
+                        System.out.println("Count acc. to city:");
+                        Map<String, Long> cityCounts = contactBook.countPersonsByCity();
+                        cityCounts.forEach((cityCount, count) -> System.out.println("Number of persons in " + cityCount + ": " + count));
                         break;
                     default:
                         System.out.println("Invalid input");
