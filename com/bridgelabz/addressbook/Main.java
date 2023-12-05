@@ -10,11 +10,7 @@ public class Main {
 
     private static final int editContact = 3;
     private static final int deleteContact=4;
-    private static final int searchedState = 5;
-    private static final int searchedCity = 6;
-    private static final int countState = 7;
-    private static final int countCity = 8;
-    private static final int exit =9;
+    private static final int exit =5;
 
     public static void main(String[] args) {
         System.out.println("Welcome to Address Book System");
@@ -30,11 +26,7 @@ public class Main {
                 System.out.println("Display Contacts -> 2");
                 System.out.println("Edit Contact ->3");
                 System.out.println("Delete Contact -> 4");
-                System.out.println("People in state -> 5");
-                System.out.println("People in city -> 6");
-                System.out.println("Count in state -> 7");
-                System.out.println("Count in city -> 8");
-                System.out.println("Exit-> 9");
+                System.out.println("Exit-> 5");
                 System.out.print("Please Enter the choice: ");
                 choice = input.nextInt();
                 if (choice == exit) {
@@ -63,7 +55,9 @@ public class Main {
                         break;
 
                     case displayContact:
-                        addressBooks.displayBook(contactBook.getContacts());
+                        System.out.println("Contacts displayed sorted acc. to First name");
+                        List<Contact> sortedByFirstName = contactBook.sortContactsByName();
+                        addressBooks.displayBook(sortedByFirstName);
                         break;
                     case editContact:
                         System.out.print("Enter First Name: ");
@@ -104,26 +98,6 @@ public class Main {
                         } else {
                             System.out.println("Contact Not Found");
                         }
-                        break;
-                    case searchedState:
-                        System.out.println("People acc. to state:");
-                        Map<String, List<Contact>> stateDictionary = contactBook.createStateDictionary();
-                        stateDictionary.forEach((stateSearched, persons) -> System.out.println("Persons in " + stateSearched + ": " + persons));
-                        break;
-                    case searchedCity:
-                        System.out.println("People acc. to city:");
-                        Map<String, List<Contact>> cityDictionary = contactBook.createCityDictionary();
-                        cityDictionary.forEach((citySearched, persons) -> System.out.println("Persons in " + citySearched + ": " + persons));
-                        break;
-                    case countState:
-                        System.out.println("Count acc. to state:");
-                        Map<String, Long> stateCounts = contactBook.countPersonsByState();
-                        stateCounts.forEach((stateCount, count) -> System.out.println("Number of persons in " + stateCount + ": " + count));
-                        break;
-                    case countCity:
-                        System.out.println("Count acc. to city:");
-                        Map<String, Long> cityCounts = contactBook.countPersonsByCity();
-                        cityCounts.forEach((cityCount, count) -> System.out.println("Number of persons in " + cityCount + ": " + count));
                         break;
                     default:
                         System.out.println("Invalid input");

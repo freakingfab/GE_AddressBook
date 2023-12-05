@@ -2,6 +2,7 @@ package com.bridgelabz.addressbook;
 
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.Map;
@@ -113,6 +114,17 @@ public class AddressBook{
         return contacts.stream()
                 .flatMap(addressBook -> this.getContacts().stream())
                 .collect(Collectors.groupingBy(Contact::getState, Collectors.counting()));
+    }
+
+    /*
+        @desc: sort the contacts acc. to name
+        @params: none
+        @return: List<Contact>
+     */
+    public List<Contact> sortContactsByName() {
+        return contacts.stream()
+                .sorted(Comparator.comparing(Contact::getFirstName))
+                .collect(Collectors.toList());
     }
 }
 
