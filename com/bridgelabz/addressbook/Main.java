@@ -15,6 +15,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Welcome to Address Book System");
         Scanner input = new Scanner(System.in);
+        AddressBookFileIO addressBookFileIO = new AddressBookFileIO();
         AddressBookSystem addressBooks = new AddressBookSystem();
         AddressBook contactBook1 = new AddressBook("Book1");
         addressBooks.add(contactBook1);
@@ -103,6 +104,15 @@ public class Main {
                         System.out.println("Invalid input");
                 }
             }
+            addressBookFileIO.writeToFile(contactBook, "addressBook.dat");
+        }
+        AddressBook readAddressBook = addressBookFileIO.readFromFile("addressBook.dat");
+        if (readAddressBook != null) {
+            System.out.println("Contacts from the read address book:\n");
+            addressBooks.displayBook(readAddressBook.getContacts());
+        }
+        else{
+            System.out.println("Can't access file");
         }
     }
 }

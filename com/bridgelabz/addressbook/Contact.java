@@ -1,10 +1,12 @@
 package com.bridgelabz.addressbook;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 //@name: com.bridgelabz.addressbook.Contact
 // @desc: class for creating contact objects
-public class Contact{
+public class Contact implements Serializable {
+    private static final long serialVersionUID = 1L;
     private String firstName, lastName, address, city, state, email;
     private int zipCode;
     private long phoneNo;

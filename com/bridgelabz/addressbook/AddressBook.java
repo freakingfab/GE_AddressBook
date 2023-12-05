@@ -1,6 +1,7 @@
 package com.bridgelabz.addressbook;
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -9,9 +10,10 @@ import java.util.Map;
 
 //@name: AddressBook
 //@desc: list of contacts is stored
-public class AddressBook{
+public class AddressBook implements Serializable {
     private List<Contact> contacts;
     private String bookName;
+    private static final long serialVersionUID = 1L;
 
     //    @desc: constructor for class
     public AddressBook(String bookName){
