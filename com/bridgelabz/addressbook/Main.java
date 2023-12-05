@@ -55,9 +55,9 @@ public class Main {
                         break;
 
                     case displayContact:
-                        System.out.println("Contacts displayed sorted acc. to First name");
-                        List<Contact> sortedByFirstName = contactBook.sortContactsByName();
-                        addressBooks.displayBook(sortedByFirstName);
+                        System.out.println("Contacts displayed sorted acc. to city then state then zipcode");
+                        List<Contact> sortedByCityStateZip = contactBook.sortContactsByCityStateZip();
+                        addressBooks.displayBook(sortedByCityStateZip);
                         break;
                     case editContact:
                         System.out.print("Enter First Name: ");

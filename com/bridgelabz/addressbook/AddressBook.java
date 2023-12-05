@@ -126,6 +126,21 @@ public class AddressBook{
                 .sorted(Comparator.comparing(Contact::getFirstName))
                 .collect(Collectors.toList());
     }
+
+    /*
+        @desc: sorts the contacts acc. to city then state then zipcode
+        @params: none
+        @return: List<Contact>
+     */
+    public List<Contact> sortContactsByCityStateZip() {
+        return contacts.stream()
+                .sorted(
+                        Comparator.comparing(Contact::getCity)
+                                .thenComparing(Contact::getState)
+                                .thenComparing(Contact::getZipCode)
+                )
+                .collect(Collectors.toList());
+    }
 }
 
 
