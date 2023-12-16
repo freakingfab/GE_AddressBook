@@ -24,6 +24,10 @@ public class Contact implements Serializable {
         this.phoneNo=phoneNo;
     }
 
+    public Contact(){
+        // empty constructor
+    }
+
     //    @desc: getter and setters for all variable
 //    @params: getter->none, setter->update variable
 //    @return: getter->same as type of variable, setter->void

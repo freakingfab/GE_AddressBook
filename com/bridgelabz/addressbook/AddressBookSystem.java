@@ -37,7 +37,7 @@ public class AddressBookSystem {
 //    @desc: function for displaying contacts
 //    @params: List of com.bridgelabz.addressbook.Contact object
 //    @return: void
-    public static void displayBook(List<Contact> contacts){
+    public void displayBook(List<Contact> contacts){
         System.out.println("Address Book");
         for (int i = 0; i < contacts.size(); i++) {
             Contact currContact = contacts.get(i);

@@ -105,6 +105,7 @@ public class Main {
             }
             addressBookCSV.writeContactsToCSV(contactBook.getContacts(), "contacts.csv");
         }
-
+        List<Contact> csvContacts = addressBookCSV.readContactsFromCSV("contacts.csv");
+        addressBooks.displayBook(csvContacts);
     }
 }
