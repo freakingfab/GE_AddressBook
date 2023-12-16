@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f33b8e6-0c6f-473c-862b-f9b95a8ba688" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/com/bridgelabz/addressbook/AddressBookFileIO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/com/bridgelabz/addressbook/AddressBookCSV.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/bridgelabz/addressbook/AddressBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/bridgelabz/addressbook/AddressBook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/bridgelabz/addressbook/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/bridgelabz/addressbook/Contact.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AddressBookSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/AddressBookSystem.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/com/bridgelabz/addressbook/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/bridgelabz/addressbook/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,15 +36,22 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "UC12__sortby__city__state__zip",
+    "git-widget-placeholder": "master",
     "last_opened_file_path": "C:/Users/Daksh/OneDrive/Desktop/New folder/GE/AddressBookSystem",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -89,7 +95,8 @@
       <workItem from="1701094936530" duration="802000" />
       <workItem from="1701138632381" duration="717000" />
       <workItem from="1701705342462" duration="6033000" />
-      <workItem from="1701791314263" duration="3563000" />
+      <workItem from="1701791314263" duration="5080000" />
+      <workItem from="1702724771445" duration="1412000" />
     </task>
     <servers />
   </component>

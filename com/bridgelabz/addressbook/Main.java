@@ -2,7 +2,6 @@ package com.bridgelabz.addressbook;
 
 import java.util.Scanner;
 import java.util.List;
-import java.util.Map;
 
 public class Main {
     private static final int addContact = 1;
@@ -15,8 +14,8 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Welcome to Address Book System");
         Scanner input = new Scanner(System.in);
-        AddressBookFileIO addressBookFileIO = new AddressBookFileIO();
         AddressBookSystem addressBooks = new AddressBookSystem();
+        AddressBookCSV addressBookCSV = new AddressBookCSV();
         AddressBook contactBook1 = new AddressBook("Book1");
         addressBooks.add(contactBook1);
         for (AddressBook contactBook: addressBooks.getAddressBooks()) {
@@ -104,15 +103,8 @@ public class Main {
                         System.out.println("Invalid input");
                 }
             }
-            addressBookFileIO.writeToFile(contactBook, "addressBook.dat");
+            addressBookCSV.writeContactsToCSV(contactBook.getContacts(), "contacts.csv");
         }
-        AddressBook readAddressBook = addressBookFileIO.readFromFile("addressBook.dat");
-        if (readAddressBook != null) {
-            System.out.println("Contacts from the read address book:\n");
-            addressBooks.displayBook(readAddressBook.getContacts());
-        }
-        else{
-            System.out.println("Can't access file");
-        }
+
     }
 }
